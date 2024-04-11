@@ -27,5 +27,5 @@ spec:
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
-        name: core
+        server: 'http://cluster-local-testing:8001'
         namespace: '{{.path.basename}}'
