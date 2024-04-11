@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: core-services
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+      repoURL: <redacted>
+      revision: HEAD
+      directories:
+      - path: '*'
+      - path: 'ingress-controllers'
+        exclude: true
+      - path: 'ingress-controllers/*'
+  template:
+    metadata:
+      name: '{{.path.basename}}'
+    spec:
+      syncPolicy:
+        automated: {}
+      project: 'default'
+      source:
+        repoURL: <redacated>
+        targetRevision: HEAD
+        path: '{{.path.path}}'
+      destination:
+        name: core
+        namespace: '{{.path.basename}}'
