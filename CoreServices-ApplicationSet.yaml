@@ -8,7 +8,7 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-      repoURL: https://github.com/34fathombelow/issue_17801.git
+      repoURL: https://github.com/saumeya/issue_17801.git
       revision: HEAD
       directories:
       - path: '*'
@@ -23,7 +23,7 @@ spec:
         automated: {}
       project: 'default'
       source:
-        repoURL: https://github.com/34fathombelow/issue_17801.git
+        repoURL: https://github.com/saumeya/issue_17801.git
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
