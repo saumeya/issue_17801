@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: ingress-nginx-external
   labels:
-    argocd.argoproj.io/managed-by: argocd
+    argocd.argoproj.io/managed-by: argocd-test
